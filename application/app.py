@@ -6,10 +6,8 @@ except ModuleNotFoundError as init:
     from sampler.application.repeater import Repeater
 finally:
     from pprint import pprint
-    import logging, pathlib, sys, os
+    import pathlib, sys, os
 
-
-logging.basicConfig(level=logging.DEBUG, format='%(message)s')
 
 class Resource:
 
