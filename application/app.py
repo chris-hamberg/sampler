@@ -5,6 +5,7 @@ except ModuleNotFoundError as init:
     from sampler.application.sample import Sample
     from sampler.application.repeater import Repeater
 finally:
+    from collections import OrderedDict
     from pprint import pprint
     import pathlib, sys, os
 
@@ -14,11 +15,12 @@ class Resource:
     PATH = os.path.join('sampler', 'resources')
 
     def __init__(self):
-        self.play_list = {e:
+        play_list = {e:
                 os.path.join(Resource.PATH, sample
                 ) for e, sample in enumerate(os.listdir (
                 Resource.PATH
                     ))}
+        self.play_list = OrderedDict(sorted(play_list.items()))
 
     def play(self, sample):
         sample = self.process(sample)
