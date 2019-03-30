@@ -1,2 +1,4 @@
 __pycache__/
+PLAY_LIST/
 *.py[cod]
+*.mp3

@@ -2,7 +2,7 @@ from application.app import Resource
 import sys, os
 
 
-PLAY_LIST_DIR = 'resources'
+PLAY_LIST_DIR = 'PLAY_LIST'
 
 
 def main():
