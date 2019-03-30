@@ -12,14 +12,18 @@ finally:
 
 class Resource:
 
-    PATH = os.path.join('sampler', 'resources')
+    PATH = os.path.join('sampler', 'PLAY_LIST')
 
     def __init__(self):
-        play_list = {e:
-                os.path.join(Resource.PATH, sample
-                ) for e, sample in enumerate(os.listdir (
-                Resource.PATH
-                    ))}
+        play_list = dict()
+        for sample in os.listdir(Resource.PATH):
+            key = int(sample.split('_')[0])
+            play_list[key] = os.path.join(Resource.PATH, sample)
+        #play_list = {e:
+        #        os.path.join(Resource.PATH, sample
+        #        ) for e, sample in enumerate(os.listdir (
+        #        Resource.PATH
+        #            ))}
         self.play_list = OrderedDict(sorted(play_list.items()))
 
     def play(self, sample):
